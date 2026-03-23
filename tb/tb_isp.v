@@ -21,6 +21,11 @@ parameter FILE_BMP_IN = "C:/Users/22144/Desktop/isp/temp/demo2.bmp";
 //输出图片
 parameter FILE_BMP_OUT = "C:/Users/22144/Desktop/isp/temp/fushi.bmp";
 
+//图片大小
+parameter COL_NUM = 512;
+parameter ROW_NUM = 512;
+
+
 //=================		读取BMP文件  	======================//
 wire [23:0]	pix_bmp_o;
 wire 		pix_bmp_o_valid;
@@ -103,7 +108,8 @@ wire Erosion_bin_dout;
 wire Erosion_bin_dout_valid;
 Erosion_bin
 #(
-	.ROW_DEPTH	(512)
+	.COL_NUM(COL_NUM),
+	.ROW_NUM(ROW_NUM)
 )
 Erosion_bin
 (

@@ -13,9 +13,9 @@ module Dilation_bin
 
 //============define  1Bit 3X3 Matrix =================//
 
-	wire matrix_p11, matrix_p12, matrix_p13;	//3X3 Matrix output
-	wire matrix_p21, matrix_p22, matrix_p23;
-	wire matrix_p31, matrix_p32, matrix_p33;
+	wire m_p11, m_p12, m_p13;	//3X3 Matrix output
+	wire m_p21, m_p22, m_p23;
+	wire m_p31, m_p32, m_p33;
 
 
 
@@ -45,9 +45,9 @@ begin
 		end
 	else
 		begin
-		post_img_Bit1 <= matrix_p11 | matrix_p12 | matrix_p13;
-		post_img_Bit2 <= matrix_p21 | matrix_p22 | matrix_p23;
-		post_img_Bit3 <= matrix_p31 | matrix_p32 | matrix_p33;
+		post_img_Bit1 <= m_p11 | m_p12 | m_p13;
+		post_img_Bit2 <= m_p21 | m_p22 | m_p23;
+		post_img_Bit3 <= m_p31 | m_p32 | m_p33;
 		end
 end
 
@@ -71,20 +71,20 @@ end
 
 
 
-	Matrix_gen
-	#(
-		. DW(1),
-		. ROW_DEPTH(ROW_DEPTH)
-	)
-	Matrix_gen1
-	(
-		.clk(clk),
-		.rst_n(rst_n),
-		.pixel_data_i(din),
-		.matrix_p11(matrix_p11),	.matrix_p12(matrix_p12), 	.matrix_p13(matrix_p13),	//3X3 Matrix output
-		.matrix_p21(matrix_p21), 	.matrix_p22(matrix_p22), 	.matrix_p23(matrix_p23),
-		.matrix_p31(matrix_p31), 	.matrix_p32(matrix_p32), 	.matrix_p33(matrix_p33)
-	);
+matrix_gen
+#(
+	. DW(1),
+	. ROW_DEPTH(ROW_DEPTH)
+)
+matrix_gen
+(
+	.clk(clk),
+	.rst_n(rst_n),
+	.pixel_data_i(din),
+	.m_p11(m_p11),	.m_p12(m_p12), 	.m_p13(m_p13),	//3X3 Matrix output
+	.m_p21(m_p21), 	.m_p22(m_p22), 	.m_p23(m_p23),
+	.m_p31(m_p31), 	.m_p32(m_p32), 	.m_p33(m_p33)
+);
 
 
 

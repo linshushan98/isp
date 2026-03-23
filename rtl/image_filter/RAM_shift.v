@@ -35,7 +35,6 @@ module RAM_shift
 
 
 //==================   output Q   ====================//	
-// assign Q = memory[DATA_DEPTH - 1];
-assign Q = memory[DATA_DEPTH - 1 ];//20260112 onenote±Ê¼Ç
+assign Q = memory[DATA_DEPTH - 1];//20260112 onenote±Ê¼Ç
 
 endmodule

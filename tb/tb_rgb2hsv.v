@@ -74,10 +74,11 @@ task send_pixel;
 	
 	begin
 		@(negedge clk);
+		@(negedge clk);
 		RGB_888 = {r,g,b};
 		valid_i = 1;
-		// @(negedge clk);
-		// valid_i = 0;
+		@(negedge clk);
+		valid_i = 0;
 	end
 
 endtask
